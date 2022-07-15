@@ -13,8 +13,26 @@ function getComputerChoice() {
         compoutput = "Scissors"
     } 
 
+}
 
-    console.log (compoutput)
+function getPlayerChoice() {
+    const playerChoice = prompt("Will you select Rock, Paper, or Scissors?");
+    let playeroutput = playerChoice.toLowerCase();
+
+    if (playeroutput == "rock") {
+        playeroutput = 0
+    }
+    if (playeroutput == "paper") {
+        playeroutput = 1
+    }
+    if (playeroutput == "scissors") {
+        playeroutput = 2
+    }
+
+
+    console.log (playeroutput)
+
 }
 
 getComputerChoice();
+getPlayerChoice()
