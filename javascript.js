@@ -1,3 +1,5 @@
+let compoutput;
+let playeroutput;
 
 function getComputerChoice() {
     const compchoice = ["Rock", "Paper", "Scissors"];
@@ -12,6 +14,8 @@ function getComputerChoice() {
     if (compoutput == 2) {
         compoutput = "Scissors"
     } 
+    
+    return compoutput;
 
 }
 
@@ -22,9 +26,27 @@ function getPlayerChoice() {
     let playeroutput1 = playerChoice.charAt(0).toUpperCase();
     let playeroutput = playeroutput1 + playeroutput2;
 
-    console.log (playeroutput)
+    return playeroutput;
 
 }
 
-getComputerChoice();
-getPlayerChoice()
+const computerpick = getComputerChoice();
+const playerpick = getPlayerChoice();
+
+
+
+
+function playRound() {
+    if ((computerpick == "Rock") && (playerpick == "Rock") ) {
+        console.log ("tie")
+    }
+    else if ((computerpick == "Paper") && (playerpick == "Rock") ) {
+        console.log ("lose")
+    }
+    else {
+        console.log ("win")
+    }
+
+}
+
+playRound();
