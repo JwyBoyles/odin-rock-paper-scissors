@@ -1,5 +1,6 @@
 let compoutput;
 let playeroutput;
+let result;
 
 function getComputerChoice() {
     const compchoice = ["Rock", "Paper", "Scissors"];
@@ -39,32 +40,63 @@ console.log(computerpick)
 
 function playRound() {
     if ((computerpick == "Rock") && (playerpick == "Rock") ) {
-        console.log ("Tie")
+        console.log ("Tie");
+        result = "Tie";
     }
     else if ((computerpick == "Paper") && (playerpick == "Rock") ) {
-        console.log ("Lose")
+        console.log ("Lose");
+        result = "Lose";
     }
     else if ((computerpick == "Scissors") && (playerpick == "Rock") ) {
-        console.log ("Win")
+        console.log ("Win");
+        result = "Win";
     }
     else if ((computerpick == "Rock") && (playerpick == "Paper") ) {
-        console.log ("Win")
+        console.log ("Win");
+        result = "Win";
     }
     else if ((computerpick == "Paper") && (playerpick == "Paper") ) {
-        console.log ("Tie")
+        console.log ("Tie");
+        result = "Tie";
     }
     else if ((computerpick == "Scissors") && (playerpick == "Paper") ) {
-        console.log ("Lose")
+        console.log ("Lose");
+        result = "Lose";
     }
     else if ((computerpick == "Rock") && (playerpick == "Scissors") ) {
-        console.log ("Lose")
+        console.log ("Lose");
+        result = "Lose";
     }
     else if ((computerpick == "Paper") && (playerpick == "Scissors") ) {
-        console.log ("Win")
+        console.log ("Win");
+        result = "Win";
     }
     else if ((computerpick == "Scissors") && (playerpick == "Scissors") ) {
-        console.log ("Tie")
+        console.log ("Tie");
+        result = "Tie";
     }
 }
 
-playRound();
+
+
+function game() {
+
+    playRound ()
+    let playerscore = 0;
+    let compscore = 0;
+
+    for (let i = 0; i < 5; i++) {
+        if (result == "Tie" ) {
+            console.log ("Draw!")
+        }
+        else if (result == "Lose"){
+            console.log ("Computer Wins Round!" + ++compscore )
+        }
+        else if (result == "Win"){
+            console.log ("Player Wins Round!" + ++playerscore )
+        }
+     }
+     
+}
+
+game();
