@@ -32,13 +32,12 @@ function getPlayerChoice() {
 
 }
 
-const computerpick = getComputerChoice();
-const playerpick = getPlayerChoice();
 
-console.log(computerpick)
 
 
 function playRound() {
+    const computerpick = getComputerChoice();
+    const playerpick = getPlayerChoice();
     if ((computerpick == "Rock") && (playerpick == "Rock") ) {
         console.log ("Tie");
         result = "Tie";
@@ -81,22 +80,31 @@ function playRound() {
 
 function game() {
 
-    playRound ()
     let playerscore = 0;
     let compscore = 0;
 
     for (let i = 0; i < 5; i++) {
+        playRound ()
         if (result == "Tie" ) {
-            console.log ("Draw!")
+            console.log ("Draw!" + " " + "Player" + playerscore + " " + "Computer" + compscore)
         }
         else if (result == "Lose"){
-            console.log ("Computer Wins Round!" + ++compscore )
+            console.log ("Computer Wins Round!" + " " + "Player" + playerscore + " " + "Computer" + ++compscore)
         }
         else if (result == "Win"){
-            console.log ("Player Wins Round!" + ++playerscore )
+            console.log ("Player Wins Round!" + " " + "Player" + ++playerscore + " " + "Computer" + compscore)
         }
      }
      
+     if (playerscore > compscore) {
+        console.log("Good Job You Beat the Computer!")
+     }
+     else if (compscore > playerscore) {
+        console.log("The Computer won try again next time :(")
+     }
+     else {
+        console.log("The game ended in a draw")
+     }
 }
 
 game();
