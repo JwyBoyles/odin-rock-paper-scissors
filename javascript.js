@@ -17,6 +17,7 @@ function getComputerChoice() {
     
     return compoutput;
 
+
 }
 
 function getPlayerChoice() {
@@ -33,20 +34,37 @@ function getPlayerChoice() {
 const computerpick = getComputerChoice();
 const playerpick = getPlayerChoice();
 
-
+console.log(computerpick)
 
 
 function playRound() {
     if ((computerpick == "Rock") && (playerpick == "Rock") ) {
-        console.log ("tie")
+        console.log ("Tie")
     }
     else if ((computerpick == "Paper") && (playerpick == "Rock") ) {
-        console.log ("lose")
+        console.log ("Lose")
     }
-    else {
-        console.log ("win")
+    else if ((computerpick == "Scissors") && (playerpick == "Rock") ) {
+        console.log ("Win")
     }
-
+    else if ((computerpick == "Rock") && (playerpick == "Paper") ) {
+        console.log ("Win")
+    }
+    else if ((computerpick == "Paper") && (playerpick == "Paper") ) {
+        console.log ("Tie")
+    }
+    else if ((computerpick == "Scissors") && (playerpick == "Paper") ) {
+        console.log ("Lose")
+    }
+    else if ((computerpick == "Rock") && (playerpick == "Scissors") ) {
+        console.log ("Lose")
+    }
+    else if ((computerpick == "Paper") && (playerpick == "Scissors") ) {
+        console.log ("Win")
+    }
+    else if ((computerpick == "Scissors") && (playerpick == "Scissors") ) {
+        console.log ("Tie")
+    }
 }
 
 playRound();
